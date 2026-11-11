@@ -15,12 +15,6 @@
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .feature-grid i { font-size: 2em; color: var(--primary-color-LR); }
 
-.todo {
-    padding: 0 6px;
-    border-radius: 4px;
-    background-color: var(--primary-color-LR);
-    color: var(--on-primary);
-}
 /*Champ d'un formulaire anti-robot non visible dit 'honeypot' qui permet de filtrer les bot basiques des humains*/
 .hp { position: absolute; left: -9999px; }
 
