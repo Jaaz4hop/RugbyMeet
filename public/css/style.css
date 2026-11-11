@@ -1,0 +1,21 @@
+:root {
+    --primary-color-LR: #F2B705;
+    --primary-color-ST: #D91122;
+    --secondary-color-LR-ST: #0D0D0D;
+    --secondary-color-LR-ST-contrasted: #211d1d;
+    --tertiary-color-LR-ST: #f2f2f2;
+    --title-font: 'Montserrat', sans-serif;
+    --text-font : 'Liberation Sans', Arial, sans-serif;
+    --header-height: 60px;
+
+    /*Couleurs de texte selon le fond (changent avec le thème)*/
+    --on-primary: var(--secondary-color-LR-ST);   /* texte posé sur la couleur principale */
+    --accent-text: var(--primary-color-LR);       /* petit texte de la couleur principale sur fond sombre */
+}
+
+/*Thème du Stade Toulousain*/
+[data-theme="stade-toulousain"] {
+    --primary-color-LR: var(--primary-color-ST);
+    --on-primary: #ffffff;  
+    --accent-text: var(--tertiary-color-LR-ST);
+}

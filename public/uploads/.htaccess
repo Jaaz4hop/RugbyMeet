@@ -1,0 +1,8 @@
+# Dossier d'uploads : jamais d'exécution de code, le navigateur ne devine pas les types
+Options -Indexes -ExecCGI
+<FilesMatch "\.(php|phtml|phar|pl|py|cgi)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

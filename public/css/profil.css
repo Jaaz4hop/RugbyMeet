@@ -1,0 +1,43 @@
+/*profil.css: profil supporter et profil gérant*/
+
+/*Choix du club : une grille de logos avec switch*/
+.club-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 12px;
+    margin: 15px 0;
+}
+
+.club-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 70px;
+    min-height: 90px;
+    font-family: var(--title-font);
+    cursor: pointer;
+}
+
+.club-option img {
+    width: auto;
+    height: auto;
+    max-width: 60px;
+    max-height: 60px;
+    margin-bottom: auto;
+    object-fit: contain;
+}
+
+.club-option .no-club { margin-bottom: auto; color: var(--accent-text); }
+.club-option input.switch { width: 100%; }
+
+/*Petit texte explicatif dans la box de sélection des clubs*/
+.hint { color: var(--tertiary-color-LR-ST); font-size: 0.9em; }
+
+/*Photo actuelle du bar*/
+.photo-current { margin-bottom: 15px; }
+.photo-current img { display: block; max-height: 200px; margin-bottom: 8px; border-radius: 10px; }
+.photo-current label { display: flex; align-items: center; gap: 8px; color: var(--accent-text); font-family: var(--title-font); }
+.photo-current input { accent-color: var(--primary-color-LR); }

@@ -1,0 +1,100 @@
+/*bar.css: liste des bars*/
+
+#barList {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px 40px;
+    box-sizing: border-box;
+    display: grid;
+    /*Dis à une colonne de prendre la largeur maximal tout en respectant une taille minimum selon la taille d'écran soit de 100% soit de 320px, ça permet d'avoir du responsif sur cet élément sans médiaquerries*/
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 20px;
+}
+
+#barList .empty { grid-column: 1 / -1; }
+
+.bar-card {
+    min-width: 0;
+    padding: 15px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--primary-color-LR);
+    background-color: var(--secondary-color-LR-ST-contrasted);
+    color: var(--tertiary-color-LR-ST);
+    font-family: var(--text-font);
+}
+
+/* Photo: occupe toute la largeur de la carte */
+.bar-photo {
+    display: block;
+    /*Ici on compense le double padding horizontal de .bar-card pour que l'image aille de bord en bord*/
+    width: calc(100% + 36px);
+    max-width: none;
+    max-height: 180px;
+    /*Pareil ici on a des marges négatives pour et une marge positive pour laisser un espace avec le titre*/
+    margin: -15px -18px 5px;
+    object-fit: cover;
+}
+
+.bar-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.bar-head form { margin: 0; }
+
+.bar-card h3 {
+    margin: 0;
+    color: var(--primary-color-LR);
+    overflow-wrap: anywhere;
+}
+
+.bar-card h4 {
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--primary-color-LR);
+    color: var(--accent-text);
+}
+
+.bar-city, .bar-desc, .bar-contact { margin: 0; }
+.bar-city { color: var(--accent-text); font-size: 0.9em; }
+.bar-contact { font-size: 0.9em; line-height: 1.6; }
+.bar-contact i, .bar-city i { color: var(--accent-text); }
+
+/*Bouton coeur: lien pour un visiteur, bouton pour un supporter*/
+.fav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--primary-color-LR);
+    border-radius: 50%;
+    background: none;
+    color: var(--primary-color-LR);
+    font: inherit;
+    font-size: 1.1em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fav:hover,
+.fav.is-fav { background-color: var(--primary-color-LR); color: var(--on-primary); }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+
+.badges li {
+    padding: 3px 10px;
+    border-radius: 20px;
+    background-color: var(--primary-color-LR);
+    color: var(--on-primary);
+    font-family: var(--title-font);
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.bar-events { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.bar-event { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 0.9em; }
+.ev-date { color: var(--accent-text); font-family: var(--title-font); font-weight: 500; }
+.ev-teams { display: inline-flex; align-items: center; gap: 6px; font-family: var(--title-font); }
+.ev-teams img { height: 22px; width: auto; }
+.ev-note { flex-basis: 100%; font-style: italic; opacity: 0.85; }
+/*style du message 'Aucune diffusion programmé*/
+.ev-none { opacity: 0.7; }

@@ -1,0 +1,87 @@
+/*pages.css: pages à contenu(à propos, contact, mentions légales, inscription, connexion, profils)*/
+
+.content {
+    width: 100%;
+    max-width: 900px;
+    padding: 10px 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.content.narrow { max-width: 560px; }
+
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.feature-grid i { font-size: 2em; color: var(--primary-color-LR); }
+
+.todo {
+    padding: 0 6px;
+    border-radius: 4px;
+    background-color: var(--primary-color-LR);
+    color: var(--on-primary);
+}
+/*Champ d'un formulaire anti-robot non visible dit 'honeypot' qui permet de filtrer les bot basiques des humains*/
+.hp { position: absolute; left: -9999px; }
+
+/* ----- Inscription : choix du rôle et champs du bar ----- */
+.role-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+}
+
+.role-choice legend {
+    margin-bottom: 8px;
+    padding: 0;
+    color: var(--accent-text);
+    font-family: var(--title-font);
+}
+
+.role-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    border: 1px solid var(--primary-color-LR);
+    border-radius: 10px;
+    font-family: var(--title-font);
+    cursor: pointer;
+}
+
+.role-card input { position: absolute; opacity: 0; }
+.role-card span { color: var(--accent-text); font-weight: 700; }
+.role-card small { font-family: var(--text-font); opacity: 0.85; }
+.role-card:has(input:checked) { background-color: var(--primary-color-LR); }
+.role-card:has(input:checked) span,
+.role-card:has(input:checked) small { color: var(--on-primary); }
+.role-card:has(input:focus-visible) { outline: 2px solid var(--tertiary-color-LR-ST); }
+
+.bar-fields {
+    margin: 0 0 15px;
+    padding: 12px 12px 0;
+    border: 1px solid var(--primary-color-LR);
+    border-radius: 10px;
+}
+
+.bar-fields legend { padding: 0 6px; color: var(--accent-text); font-family: var(--title-font); }
+
+.debug {
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--secondary-color-LR-ST);
+    color: var(--tertiary-color-LR-ST);
+    white-space: pre-wrap;
+}
+
+@media (max-width: 860px) {
+    .feature-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .role-choice { grid-template-columns: 1fr; }
+}

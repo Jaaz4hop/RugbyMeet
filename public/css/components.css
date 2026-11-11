@@ -1,0 +1,177 @@
+/*components.css: panneaux, boutons, champs de formulaire, interrupteurs*/
+
+/* ----- Panneau ----- */
+.panel {
+    padding: 20px 25px;
+    border: 1px solid var(--primary-color-LR);
+    background-color: var(--secondary-color-LR-ST-contrasted);
+    color: var(--tertiary-color-LR-ST);
+    line-height: 1.6;
+}
+
+.panel h2,
+.panel h3 {
+    margin: 0 0 10px;
+    color: var(--primary-color-LR);
+    font-family: var(--title-font);
+}
+
+.panel p { margin: 0 0 10px; }
+.panel p:last-child { margin-bottom: 0; }
+.panel a { color: var(--accent-text); }
+.panel form { margin: 0; }
+
+/* ----- Boutons: même base, trois formats ----- */
+.btn, .btn-save, .btn-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: none;
+    background-color: var(--primary-color-LR);
+    color: var(--on-primary);
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover, .btn-save:hover, .btn-filter:hover { background-color: var(--tertiary-color-LR-ST); }
+/*formulaires*/
+.btn        { padding: 10px 25px; border-radius: 10px; }   
+/*boutons profil*/        
+.btn-save   { padding: 6px 18px; border-radius: 50px; }   
+/*filtres*/         
+.btn-filter { height: 35px; padding: 0 18px; border-radius: 10px; } 
+
+.form-actions { display: flex; justify-content: flex-end; margin-top: 5px; }
+/*Retirer et supprimer des pages profil*/
+.btn-link {
+    padding: 4px 0;
+    border: none;
+    background: none;
+    color: var(--accent-text);
+    font-family: var(--text-font);
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ----- Formulaire ----- */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-family: var(--title-font);
+}
+
+.field label { color: var(--accent-text); }
+/*Petite indications supplémentaires dans les formulaires*/
+.field small { color: var(--tertiary-color-LR-ST); font-weight: 400; }
+
+.field input:not([type="checkbox"]):not([type="radio"]),
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color-LR);
+    border-radius: 10px;
+    background-color: var(--secondary-color-LR-ST);
+    color: var(--tertiary-color-LR-ST);
+    font-family: var(--text-font);
+    font-size: 1em;
+}
+
+.field input[type="file"] { padding: 6px; }
+.field textarea { resize: vertical; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus { outline: 2px solid var(--tertiary-color-LR-ST); }
+
+/* Deux champs côte à côte*/
+/*Code postal et ville*/
+.field-row { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+/*date et heure*/
+.field-row.equal { grid-template-columns: 1fr 1fr; }
+/*message d'erreur pour un champ précis*/
+.field-error { margin: 4px 0 0; color: #ff9c9c; font-size: 0.9em; }
+/*message d'erreur pour le formulaire en entier*/
+.form-error {
+    margin: 0 0 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: #8a1c1c;
+    color: #ffffff;
+    font-family: var(--title-font);
+}
+/*texte secondaire qui emmène vers une autre page de formulaire si le formulaire n'est aps le bon*/
+.alt-link { margin-top: 15px; font-family: var(--title-font); }
+
+/*Case à cocher avec libellé à côté*/
+.check-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-family: var(--title-font);
+    color: var(--accent-text);
+}
+
+.check-row label { margin: 0; }
+
+/*Interrupteur: checkbox modifié en switch*/
+input.switch {
+    appearance: none;
+    position: relative;
+    flex-shrink: 0;
+    width: 60px;
+    height: 18px;
+    margin: 0;
+    border-radius: 5rem;
+    background-color: var(--tertiary-color-LR-ST);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input.switch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 18px;
+    height: 18px;
+    border-radius: 5rem;
+    background-color: #c1baba;
+    transform: translate(-50%, -50%);
+    transition: left 0.2s;
+}
+
+input.switch:checked { background-color: var(--primary-color-LR); }
+input.switch:checked::after { left: 85%; background-color: var(--secondary-color-LR-ST-contrasted); }
+input.switch:focus-visible { outline: 2px solid var(--tertiary-color-LR-ST); outline-offset: 2px; }
+
+/* ----- Liste avec action à droite (favoris, évènements) ----- */
+.item-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--primary-color-LR);
+}
+
+.item-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.item-list form { flex-shrink: 0; }
+.item-list i { color: var(--primary-color-LR); }
+
+@media (max-width: 600px) {
+    .panel { padding: 15px; }
+    .field-row, .field-row.equal { grid-template-columns: 1fr; }
+}

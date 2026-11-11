@@ -1,0 +1,87 @@
+/*cards.css: cartes de matchs (accueil et calendrier)*/
+
+/*Conteneur: cartes centrées, toujours séparées par 20px*/
+#matchCards,
+.match-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+
+.cards {
+    width: 220px;
+    min-height: 160px;
+    display: flex;
+    flex-flow: column;
+    background-color: var(--primary-color-LR);
+    color: var(--on-primary);
+}
+
+.topCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    background-color: var(--secondary-color-LR-ST-contrasted);
+    color: var(--accent-text);
+    font-weight: lighter;
+}
+
+.home-date-away {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: 2px solid var(--on-primary);
+}
+
+.home-date-away i { font-size: 1.2em; color: var(--on-primary); }
+.home-date-away h5 { font-size: 1em; }
+/*"Horaire à venir"*/
+.home-date-away h5.tbd { font-size: 0.75em; text-align: center; }   
+
+.match-teams {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Trait vertical entre les deux équipes */
+.match-teams::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--on-primary);
+    transform: translateX(-50%);
+}
+
+.home-team, .away-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-team h6, .away-team h6 { margin-bottom: 5px; }
+
+.home-team img, .away-team img {
+    height: 60px;
+    width: auto;
+    margin: auto;
+    object-fit: contain;
+}
+
+.journee-group { margin-bottom: 20px; }
+.journee-group h3 { margin-top: 20px; }
+
+@media (max-width: 600px) {
+    .cards { width: min(100%, 320px); }
+}
