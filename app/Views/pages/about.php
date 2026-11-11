@@ -26,7 +26,6 @@
         </section>
         <section class="panel">
             <h2>L'équipe</h2>
-            <?php //Texte à compléter avant la mise en ligne ([À compléter]) ?>
-            <p>RugbyMeet est un projet étudiant porté par des passionnés de rugby et de développement web. <span class="todo">[À compléter : présentation de l'équipe]</span></p>
+            <p>RugbyMeet est un projet étudiant porté par un passionné de rugby et de développement web.</p>
         </section>
     </div>

@@ -1,0 +1,5 @@
+# Fichiers envoyés par les utilisateurs et courriers de test
+public/uploads/bars/*
+!public/uploads/bars/.gitkeep
+storage/mails/*
+!storage/mails/.gitkeep

@@ -1,4 +1,3 @@
-    <?php //Page statique : les textes marqués [À compléter] sont à remplir ?>
     <section id="titles">
         <h1>MENTIONS LEGALES</h1>
     </section>
@@ -6,12 +5,12 @@
         <section class="panel">
             <h2>Éditeur du site</h2>
             <p>RugbyMeet est un projet étudiant à but non commercial.</p>
-            <p>Responsable de la publication : <span class="todo">[À compléter : nom / prénom]</span><br>
+            <p>Responsable de la publication : Franc Cyril<br>
             Contact : <a href="<?= e(url('/contact')) ?>">formulaire de contact</a></p>
         </section>
         <section class="panel">
             <h2>Hébergement</h2>
-            <p><span class="todo">[À compléter : nom, adresse et contact de l'hébergeur]</span></p>
+            <p>Projet Pédagogique, hébergement en local.</p>
         </section>
         <section class="panel">
             <h2>Propriété intellectuelle</h2>
